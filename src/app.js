@@ -1,9 +1,11 @@
 import express from "express";
+import router from "./routes/index.routes.js";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+//Middelwares
+app.use(express.json());
+
+app.use(router);
 
 export default app;
