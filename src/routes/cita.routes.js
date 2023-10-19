@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { createCita, getCitas } from "../controllers/cita.controller.js";
 
 const router = Router();
 
-router.get("/");
-router.post("/");
+router.get("/", getCitas);
+router.post("/", createCita);
 router.put("/:id");
 router.delete("/:id");
 router.get("/:id");
