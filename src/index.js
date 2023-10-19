@@ -1,18 +1,17 @@
-import express from "express";
-import pg from "pg";
-config();
+import app from "./app.js";
+import { sequelize } from "./database/database.js";
+import "./models/Cliente.js";
+import "./models/Cita.js";
 
-const app = express();
-const port = process.env.PORT || 3000;
-const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
-  //   ssl: true,
-});
+async function main() {
+  try {
+    await sequelize.sync({ force: true });
+    console.log("conexion exitosa");
+    app.listen(3000);
+    console.log("Server is listening on port ", 3000);
+  } catch (error) {
+    console.log("error en la conexion", error);
+  }
+}
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
-
-app.listen(port);
-
-console.log("Server on port ", port);
+main();
