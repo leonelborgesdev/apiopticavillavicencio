@@ -1,10 +1,10 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
-export const Receta = sequelize("Receta", {
+export const Receta = sequelize.define("Receta", {
   id: {
     type: DataTypes.STRING,
-    primarykey: true,
+    primaryKey: true,
   },
   doctor: {
     type: DataTypes.STRING,
