@@ -8,9 +8,9 @@ export const sequelize = new Sequelize(
   //   DATABASE_URL,
   {
     //---------------------------Deploy--------------------------
-    // dialectOptions: {
-    //   ssl: { require: true, rejectUnauthorized: false },
-    // },
+    dialectOptions: {
+      ssl: { require: true, rejectUnauthorized: false },
+    },
     //------------------------------------------------------------
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
