@@ -16,54 +16,56 @@ export const Receta = sequelize.define("Receta", {
   },
   esf_od_lejos: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   cil_od_lejos: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   eje_od_lejos: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   esf_oi_lejos: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   cil_oi_lejos: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   eje_oi_lejos: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   add_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   esf_od_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   cil_od_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   eje_od_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   esf_oi_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   cil_oi_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   eje_oi_cerca: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 });
+
+// Receta.belongsTo(Cliente);
