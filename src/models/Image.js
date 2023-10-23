@@ -6,11 +6,11 @@ export const Image = sequelize.define("Image", {
     type: DataTypes.STRING,
     primaryKey: true,
   },
-  publicId: {
+  public_id: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  secureUrl: {
+  secure_url: {
     type: DataTypes.STRING,
     allowNull: false,
   },
