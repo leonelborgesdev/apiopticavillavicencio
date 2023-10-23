@@ -1,5 +1,6 @@
 import { Image } from "../models/Image.js";
 import { uploadImage } from "../utils/cloudinary.js";
+import fs from "fs-extra";
 
 export const getAllImages = async (req, res) => {
   try {
@@ -20,7 +21,9 @@ export const createImage = async (req, res) => {
       const { public_id, secure_url } = result;
       console.log(result);
       console.log(public_id, secure_url);
+      await fs.unlink(req.files.image.tempFilePath);
       const newImage = await Image.create({ id, public_id, secure_url });
+
       return res.status(200).json({ newImage });
     }
     return res.status(404).json({ msg: "Error consulte a su administrador" });
