@@ -2,6 +2,7 @@ import express from "express";
 import router from "./routes/index.routes.js";
 import morgan from "morgan";
 import cors from "cors";
+import fileupload from "express-fileupload";
 
 const app = express();
 
@@ -9,6 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(
+  fileupload({
+    useTempFiles: true,
+    tempFileDir: "./uploads",
+  })
+);
 
 app.use(router);
 
