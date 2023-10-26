@@ -7,11 +7,11 @@ export const getAllProducts = async (req, res) => {
   try {
     console.log(descripcion);
     if (descripcion) {
-      const productosbd = await Producto.findAll({
+      const list_products = await Producto.findAll({
         include: Image,
         where: { descripcion: { [Op.iLike]: `%${descripcion}%` } },
       });
-      return res.status(201).json(productosbd);
+      return res.status(201).json({ list_products });
     }
     const list_products = await Producto.findAll({ include: Image });
     return res.status(200).json({ list_products });
